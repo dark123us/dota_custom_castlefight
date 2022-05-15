@@ -7,3 +7,6 @@
 [submodule "src/game/scripts/vscripts/lib/dota-lua-debug"]
 	path = src/game/scripts/vscripts/lib/dota-lua-debug
 	url = ssh://git@github.com/dark123us/dota-lua-debug
+[submodule "src/game/scripts/vscripts/lib/dota-ecs"]
+	path = src/game/scripts/vscripts/lib/dota-ecs
+	url = ssh://git@github.com/dark123us/dota-ecs
