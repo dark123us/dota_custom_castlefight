@@ -1,0 +1,159 @@
+.tooltip__main {
+    /* position: 905px 405px 0px; */
+    /* layout-position: fixed; */
+    position: 0px 0px 0px;
+    /* flow-children: down; */
+    padding-bottom: 13px;
+    width: 327px;
+    /* height: 648px;*/
+    padding-left: 13px;
+    padding-top: 3px; 
+    overflow: clip clip;
+    background-color: gradient(
+        linear, 0% 0%, 0% 100%, from(#102941cc), to(#1d3347cc));
+}
+
+.tooltip__w100 {
+    width: 302px;
+}
+
+.tooltip__main-hide {
+    width: 0px; 
+    height: 0px; 
+}
+
+.tooltip__image {
+    width: 57px;
+    height: 42px;
+    margin-right: 13px;
+    /*
+    background-color: #ffffff;
+    */
+}
+
+.tooltip__row {
+    flow-children: right;
+    margin-top: 10px;
+}
+
+.tooltip__column {
+    flow-children: down;
+    margin-right: 13px;
+}
+
+.tooltip__header {
+    layout-position: static;
+}
+
+.tooltip__text {
+    font-size: 14;
+    color: #CDDDEB;
+    font-weight: bold;
+    margin: 5px;
+}
+
+.tooltip__text2 {
+    font-size: 12;
+    color: #CDDDEB;
+    font-weight: bold;
+}
+
+.tooltip__text-gold {
+    color: #FFC52F;
+}
+
+.tooltip__text-tree {
+    color: #3FA03D;
+}
+
+.tooltip__text-place {
+    color: #E85555;
+}
+
+.tooltip__text-info {
+    color: #FFFFFF;
+}
+
+.tooltip__text-tableheader {
+    color: #7CC8FF99;
+}
+
+.tooltip__text-vipheader {
+    color: #EFC280;
+}
+
+.tooltip__text-vip {
+    color: #d9d9d9;
+}
+
+.tooltip__text-activeheader {
+    color: #80B3EF;
+}
+
+.tooltip__text-active {
+    color: #A0ADBD;
+}
+
+.tooltip__text-passiveheader {
+    color: #C5D2E0;
+}
+
+.tooltip__text-passive {
+    color: #A0ADBD;
+}
+.tooltip__text-note {
+    color: #FFFFFF;
+}
+.tooltip__text-lore {
+    color: #FFFFFF;
+}
+
+
+.tooltip__cardvip-header {
+    border: 1px solid #8C7D46;
+    background-color: gradient(
+        linear, 0% 0%, 100% 100%, from(#8D7e46), to(#81551500));
+}
+
+.tooltip__cardvip {
+    border: 1px solid #8C7D46;
+    background-color: #FFc4534c;
+}
+
+.tooltip__cardactive-header {
+    border: 1px solid #45668d;
+    background-color: gradient(
+        linear, 0% 0%, 100% 100%, from(#46668d), to(#15468100));
+}
+
+.tooltip__cardactive {
+    border: 1px solid #44658c;
+    background-color: gradient(
+        linear, 0% 0%, 0% 100%, from(#5b84b2), 
+        color-stop( 0.26, #5b84b242),
+        color-stop( 0.76, #5e81aa6e),
+        to(#324862));
+}
+
+.tooltip__cardpassive-header {
+    border: 1px solid #576474;
+    background-color: gradient(
+        linear, 0% 0%, 100% 100%, from(#d6d6d654), to(#cccccc00));
+}
+
+.tooltip__cardpassive {
+    border: 1px solid 586474;
+    background-color: gradient(
+        linear, 0% 0%, 0% 100%, from(#a9b2bc), 
+        color-stop( 0.26, #a5aeb842),
+        color-stop( 0.76, #99a2ac6e),
+        to(#55595f93));
+}
+
+.tooltip__note {
+    background-color: #68849E;
+}
+
+.tooltip__lore {
+    background-color: #0000004d;
+}

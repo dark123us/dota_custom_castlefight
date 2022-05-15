@@ -1,0 +1,17 @@
+*.*_c
+*.autosave
+*.bin
+*.cfg
+*.tmp
+*.swp
+.idea/
+.vscode/
+content/panorama/scripts/*.js
+content/panorama/scripts/*.map
+game/*
+!game/scripts/
+!game/resource/
+!game/itembuilds/
+!game/addoninfo.txt
+!game/panorama/localization/
+vendors/

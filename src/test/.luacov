@@ -1,0 +1,9 @@
+-- https://keplerproject.github.io/luacov/
+-- https://keplerproject.github.io/luacov/doc/modules/luacov.defaults.html
+include = {
+  "vscripts%/.+$"
+}
+exclude = {
+  "lunatest",
+  "socket"
+}

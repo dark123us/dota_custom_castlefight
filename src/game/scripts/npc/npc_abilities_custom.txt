@@ -1,0 +1,18 @@
+// Dota Heroes File
+"DOTAAbilities"
+{
+	"Version"		"1"
+
+	"Ability1"
+	{
+		"BaseClass"			"ability_lua"
+		"ScriptFile"		"abilities/main"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+	}
+	"Ability2"
+	{
+		"BaseClass"			"ability_lua"
+		"ScriptFile"		"abilities/main"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+	}
+}

@@ -1,0 +1,7 @@
+<root>
+    <script>
+        // $.Msg("custom_loading_screen.xml")
+    </script>
+    <Panel id="panel_id" class="MainPanelClass">
+    </Panel>
+</root>

@@ -1,0 +1,10 @@
+<root>
+    <script>
+        $.Msg("---+++load+++---")
+    </script>
+    <Panel>
+        <Panel class="tooltip" id="dark123us2">
+            Hello    
+        </Panel>
+    </Panel>
+</root>

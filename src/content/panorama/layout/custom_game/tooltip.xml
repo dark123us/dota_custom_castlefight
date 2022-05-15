@@ -1,0 +1,91 @@
+<root>
+    <script>
+        $.Msg("+++load+++")
+    </script>
+    <styles>
+        <include src="file://{resources}/style/tooltip.css"/>
+        <include src="file://{resources}/vendors/ecs-dota/style/tooltip.css"/>
+    </styles>
+    <Panel class="tooltip__main" hittest="false">
+        <Panel class="tooltip__column">
+            <Panel class="tooltip__row">
+                <DOTAAbilityImage id="vdTooltipAbilityImage" class="tooltip__image" 
+                    src="file://{images}/spellicons/windrunner_shackleshot.png"/>
+                <Panel class="tooltip__column">
+                    <Label class="tooltip__text" html="true" text="{s:name}"/>
+                    <Panel class="tooltip__row">
+                        <Label class="tooltip__text tooltip__text-gold" html="true" text="{s:gold}"/>
+                        <Label class="tooltip__text tooltip__text-tree" html="true" text="{s:tree}"/>
+                        <Label class="tooltip__text tooltip__text-place" html="true" text="{s:place}"/>
+                    </Panel>
+                </Panel>
+            </Panel>
+            <Panel class="tooltip__row">
+                <Label class="tooltip__text2 tooltip__text-info" text="{s:info}" />
+            </Panel>
+            <Panel class="tooltip__row">
+                <Panel class="tooltip__column">
+                    <Label class="tooltip__text2 tooltip__text-tableheader" text="{s:lblAttack}" />
+                    <Label class="tooltip__text2" text="{s:attack0}" />
+                    <Label class="tooltip__text2" text="{s:attack1}" />
+                    <Label class="tooltip__text2" text="{s:attack2}" />
+                </Panel>
+                <Panel class="tooltip__column">
+                    <Label class="tooltip__text2 tooltip__text-tableheader" text="{s:lblDefence}" />
+                    <Label class="tooltip__text2" text="{s:defence0}" />
+                    <Label class="tooltip__text2" text="{s:defence1}" />
+                    <Label class="tooltip__text2" text="{s:defence2}" />
+                </Panel>
+                <Panel class="tooltip__column">
+                    <Label class="tooltip__text2 tooltip__text-tableheader" text="{s:lblMobility}" />
+                    <Label class="tooltip__text2" text="{s:mobility0}" />
+                    <Label class="tooltip__text2" text="{s:mobility1}" />
+                    <Label class="tooltip__text2" text="{s:mobility2}" />
+                </Panel>
+            </Panel>
+            <Panel class="tooltip__row">
+               <Panel class="tooltip__column" >
+                   <Panel class="tooltip__cardvip-header tooltip__w100">
+                       <Label class="tooltip__text tooltip__text-vipheader" text="{s:vipheader}" />
+                    </Panel>
+                    <Panel class="tooltip__cardvip tooltip__w100">
+                        <Label class="tooltip__text tooltip__text-vip" text="{s:vip}" />
+                    </Panel>
+                </Panel>
+            </Panel>
+            <Panel class="tooltip__row">
+               <Panel class="tooltip__column" >
+                   <Panel class="tooltip__cardactive-header tooltip__w100">
+                       <Label class="tooltip__text tooltip__text-activeheader" text="{s:activeheader}" />
+                    </Panel>
+                    <Panel class="tooltip__cardactive tooltip__w100">
+                        <Panel class="tooltip__column">
+                            <Label class="tooltip__text tooltip__text-active" text="{s:active}" />
+                            <Panel class="tooltip__row">
+                                <Label class="tooltip__text tooltip__text-active" text="{s:actives0}" />
+                                <Label class="tooltip__text tooltip__text-active" text="{s:actives1}" />
+                                <Label class="tooltip__text tooltip__text-active" text="{s:actives2}" />
+                            </Panel>
+                        </Panel>
+                    </Panel>
+                </Panel>
+            </Panel>
+            <Panel class="tooltip__row">
+               <Panel class="tooltip__column" >
+                   <Panel class="tooltip__cardpassive-header tooltip__w100">
+                       <Label class="tooltip__text tooltip__text-passiveheader" text="{s:passiveheader}" />
+                    </Panel>
+                    <Panel class="tooltip__cardpassive tooltip__w100">
+                        <Label class="tooltip__text tooltip__text-passive" text="{s:passive}" />
+                    </Panel>
+                </Panel>
+            </Panel>
+            <Panel class="tooltip__row tooltip__note tooltip__w100">
+                <Label class="tooltip__text tooltip__text-note" text="{s:note}" />
+            </Panel>
+            <Panel class="tooltip__row tooltip__lore tooltip__w100">
+                <Label class="tooltip__text tooltip__text-lore" text="{s:lore}" />
+            </Panel>
+        </Panel>
+    </Panel>
+</root>

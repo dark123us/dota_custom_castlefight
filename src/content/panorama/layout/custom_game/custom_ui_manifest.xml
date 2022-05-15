@@ -1,0 +1,14 @@
+<root>
+    <script>
+        // $.Msg("custom_ui_manifest.xml")
+    </script>
+    <scripts>
+        <!--
+            <include src="file://{resources}/script/index.js" />
+        -->
+    </scripts>
+    <Panel>
+        <CustomUIElement type="Hud" layoutfile="file://{resources}/layout/custom_game/index.xml" />
+    </Panel>
+</root>
+

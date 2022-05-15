@@ -1,0 +1,6 @@
+"Layer0"
+{
+	"Shader"	"ui.vfx"
+	"F_TRANSLUCENT"	"0"
+	"Texture"	"materials/overviews/catle_story_0.1.tga"
+}
