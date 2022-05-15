@@ -1,0 +1,9 @@
+[submodule "src/game/scripts/vscripts/lib/RxLua"]
+	path = src/game/scripts/vscripts/lib/RxLua
+	url = https://github.com/bjornbytes/RxLua
+[submodule "src/game/scripts/vscripts/lib/ecs-dota"]
+	path = src/game/scripts/vscripts/lib/ecs-dota
+	url = ssh://git@github.com/dark123us/ecs-dota
+[submodule "src/game/scripts/vscripts/lib/dota-lua-debug"]
+	path = src/game/scripts/vscripts/lib/dota-lua-debug
+	url = ssh://git@github.com/dark123us/dota-lua-debug
