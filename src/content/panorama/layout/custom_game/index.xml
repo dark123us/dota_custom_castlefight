@@ -4,14 +4,14 @@
 
     </script>
     <scripts>
-        <include src="file://{resources}/lib/debug-dota/vendors/moment/moment.min.js" />
-        <include src="file://{resources}/lib/debug-dota/vendors/js-logger/logger.min.js" />
-        <include src="file://{resources}/lib/debug-dota/console.js" />
-        <include src="file://{resources}/lib/debug-dota/logging.js" />
-        <include src="file://{resources}/lib/ecs-dota/script/document.js" />
-        <include src="file://{resources}/lib/ecs-dota/script/event.js" />
-        <include src="file://{resources}/lib/ecs-dota/script/ui.js" />
-        <include src="file://{resources}/lib/ecs-dota/script/tooltip.js" />
+        <include src="file://{resources}/lib/vendors/moment/moment.min.js" />
+        <include src="file://{resources}/lib/vendors/js-logger/logger.min.js" />
+        <include src="file://{resources}/lib/debug/console.js" />
+        <include src="file://{resources}/lib/debug/logging.js" />
+        <include src="file://{resources}/lib/util/script/document.js" />
+        <include src="file://{resources}/lib/util/script/event.js" />
+        <include src="file://{resources}/lib/util/script/ui.js" />
+        <include src="file://{resources}/lib/util/script/tooltip.js" />
         <include src="file://{resources}/script/rnd.js" />
         <include src="file://{resources}/script/index.js" />
     </scripts>

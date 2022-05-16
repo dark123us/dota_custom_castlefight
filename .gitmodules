@@ -1,6 +1,6 @@
 [submodule "src/game/scripts/vscripts/lib/RxLua"]
 	path = src/game/scripts/vscripts/lib/RxLua
-	url = https://github.com/bjornbytes/RxLua
+	url = ssh://git@github.com/bjornbytes/RxLua
 [submodule "src/game/scripts/vscripts/lib/ecs-dota"]
 	path = src/game/scripts/vscripts/lib/ecs-dota
 	url = ssh://git@github.com/dark123us/ecs-dota
@@ -10,3 +10,15 @@
 [submodule "src/game/scripts/vscripts/lib/dota-ecs"]
 	path = src/game/scripts/vscripts/lib/dota-ecs
 	url = ssh://git@github.com/dark123us/dota-ecs
+[submodule "src/content/panorama/lib/ecs-dota"]
+	path = src/content/panorama/lib/ecs-dota
+	url = ssh://git@github.com/dark123us/ecs-dota
+[submodule "src/content/panorama/lib/debug-dota"]
+	path = src/content/panorama/lib/debug-dota
+	url = ssh://git@github.com/dark123us/debug-dota
+[submodule "src/content/panorama/lib/debug"]
+	path = src/content/panorama/lib/debug
+	url = ssh://git@github.com/dark123us/dota-custom-panorama-debug
+[submodule "src/content/panorama/lib/util"]
+	path = src/content/panorama/lib/util
+	url = ssh://git@github.com/dark123us/dota-custom-panorama-util
