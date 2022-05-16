@@ -1,3 +1,4 @@
+$.Msg("===================== HELLO =======================")
 (function (global) {
     const log = global.logging.getLogger();
 
@@ -16,9 +17,6 @@
     log.debug({eventid})
 
     event.emit('hello', {a:2, b:3})
-
-
-
 
     const NAME = "MAIN"
     const UNIT = {[NAME]: {}}

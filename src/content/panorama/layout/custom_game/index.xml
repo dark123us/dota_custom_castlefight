@@ -6,8 +6,8 @@
     <scripts>
         <include src="file://{resources}/lib/vendors/moment/moment.min.js" />
         <include src="file://{resources}/lib/vendors/js-logger/logger.min.js" />
-        <include src="file://{resources}/lib/debug/console.js" />
-        <include src="file://{resources}/lib/debug/logging.js" />
+        <include src="file://{resources}/lib/debug/src/console.js" />
+        <include src="file://{resources}/lib/debug/src/logging.js" />
         <include src="file://{resources}/lib/util/script/document.js" />
         <include src="file://{resources}/lib/util/script/event.js" />
         <include src="file://{resources}/lib/util/script/ui.js" />
