@@ -3,8 +3,8 @@ LIB=lib
 
 CONTENT_DST=$PATHDOTA/content/$SUFFIX
 GAME_DST=$PATHDOTA/game/$SUFFIX
+CONTENT_LIB=panorama/$LIB
 GAME_LIB=scripts/vscripts/$LIB
-# CONTENTLIB=$CONTENT/panorama/$LIB
 # CONTENTLIBXML=$CONTENT/panorama/layout/custom_game/$LIB
 
 RSYNC="rsync -rmv "

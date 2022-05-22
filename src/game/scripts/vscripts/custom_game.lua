@@ -1,7 +1,7 @@
 -- D:\SteamLibrary\steamapps\common\dota 2 beta\game\core\scripts\vscripts\utils
-local hook_require = require("lib.dota-lua-debug.hook_require")
+local hook_require = require("lib.dota-lua-debug.debug.hook_require")
 hook_require:install()
-local Logger = require("lib.dota-lua-debug.logging")
+local Logger = require("lib.dota-lua-debug.debug").logging
 local log = Logger()
 log:setLevel(log.DEBUG)
 log:debug("---------init------------")
@@ -11,18 +11,23 @@ local directory = args[1]..'.'
 log:debug(directory)
 local setup = require(directory.."setup")
 
-local ECS = require("lib.dota-ecs")
+local ECS = require("lib.dota-ecs.ecs")
 log:debug("///////")
 log:debug({ECS})
+log:debug({setup})
 
 local Rx = require("lib.RxLua.rx")
 log:debug(tostring(Rx))
+
+local msg = function(val)
+    log:debug(val)
+end
 
 Rx.Observable.fromRange(1, 8)
   :filter(function(x) return x % 2 == 0 end)
   :concat(Rx.Observable.of('who do we appreciate'))
   :map(function(value) return value .. '!' end)
-  :subscribe(print)
+  :subscribe(msg)
 
 if CustomGame == nil then
     CustomGame = {}

@@ -38,12 +38,14 @@ while true; do
 #             fi
                 if [[ $directory == *$WATCH_CONTENT* ]]; then
                     echo "in content"
-                    sync_custom_content
+                    sync_content
+                    sync_content_lib
                     # sleep 1
                     # make support
                 elif [[ $directory == *$WATCH_GAME* ]]; then
                     echo "in game"
-                    sync_custom_game
+                    sync_game
+                    sync_game_lib
                     # sleep 1
                     # make support
                 fi

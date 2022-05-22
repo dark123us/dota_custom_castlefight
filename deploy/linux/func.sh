@@ -52,6 +52,37 @@ function sync_game_lib {
     done
 }
 
+function install_content_lib {
+    dst=$CONTENT_DST/$CONTENT_LIB
+    if [ ! -d "$dst" ]; then
+        mkdir "$dst"
+    fi
+    for K in "${!CONTENT_LIB_INSTALL[@]}"; do
+        dst=$CONTENT_DST/$CONTENT_LIB/$K
+        src=$PATHREP/$SOURCE/content/$CONTENT_LIB/$K
+        if [ ! -d "$dst" ]; then
+            mkdir "$dst"
+        fi
+        get_include ${CONTENT_LIB_INSTALL[$K]}
+        params=${get_include_ret[@]}
+        val="$RSYNC ${params[@]} '$src/' '$dst/'"
+        echo $val 
+        $RSYNC ${params[@]} "$src" "$dst/"
+    done
+}
+
+function sync_content_lib {
+    for K in "${!CONTENT_LIB_SYNC[@]}"; do
+        dst=$CONTENT_DST/$CONTENT_LIB/$K
+        src=$PATHREP/$SOURCE/content/$CONTENT_LIB/$K
+        get_include ${CONTENT_LIB_SYNC[$K]}
+        params=${get_include_ret[@]}
+        val="$RSYNC ${params[@]} '$src/' '$dst/'"
+        echo $val 
+        $RSYNC ${params[@]} "$src/" "$dst/"
+    done
+}
+
 function sync_game {
     ext=(*.lua *.txt)
     get_include ${ext[@]}
@@ -77,6 +108,8 @@ function install_custom {
     fi
     sync_game
     sync_content
+    install_game_lib
+    install_content_lib
 }
 
 function build_map {
