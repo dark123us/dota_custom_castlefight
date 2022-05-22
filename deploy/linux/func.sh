@@ -1,38 +1,82 @@
 function clear_dest {
-	if [ -d "$CONTENT_DST" ]; then
-		rm -rf "$CONTENT_DST"
-	fi
-
-	if [ -d "$GAME_DST" ]; then
-		rm -rf "$GAME_DST"
-	fi
+    if [ -d "$CONTENT_DST" ]; then
+	rm -rf "$CONTENT_DST"
+    fi
+    if [ -d "$GAME_DST" ]; then
+    	rm -rf "$GAME_DST"
+    fi
 }
 
-function sync_custom_game {
-    ext=(lua txt)
-    get_include ${ext[@]}
-    params=${get_include_ret[@]}
-    val="$RSYNC ${params[*]} '$PATHREP/$SOURCE/game/' '$GAME_DST'"
-    # echo $val 
-    $RSYNC ${params[@]} "$PATHREP/$SOURCE/game/" "$GAME_DST/"
+get_include_ret=()
+function get_include {
+    get_include_ret=()
+    if [ $# -eq 0 ]; then
+        return
+    fi
+    local arr=("$@")
+    # echo ${arr[*]}
+    for i in "${arr[@]}"; do
+        get_include_ret+=( --include=$i )
+    done
+    get_include_ret+=( --include='*/' )
+    get_include_ret+=( --exclude='*' )
+    # echo ${func_ret[*]}
 }
 
-function sync_custom_content {
-    ext=(js css xml vmap png tif tga txt vmat vtex psd)
+function install_game_lib {
+    dst=$GAME_DST/$GAME_LIB
+    if [ ! -d "$dst" ]; then
+        mkdir "$dst"
+    fi
+    for K in "${!GAME_LIB_INSTALL[@]}"; do
+        dst=$GAME_DST/$GAME_LIB/$K
+        if [ ! -d "$dst" ]; then
+            mkdir "$dst"
+        fi
+        get_include ${GAME_LIB_INSTALL[$K]}
+        params=${get_include_ret[@]}
+        val="$RSYNC ${params[@]} '$PATHREP/$SOURCE/game/$GAME_LIB/$K/' '$dst/'"
+        echo $val 
+        $RSYNC ${params[@]} "$PATHREP/$SOURCE/game/$GAME_LIB/$K/" "$dst/"
+    done
+}
+
+function sync_game_lib {
+    for K in "${!GAME_LIB_SYNC[@]}"; do
+        dst=$GAME_DST/$GAME_LIB/$K
+        get_include ${GAME_LIB_SYNC[$K]}
+        params=${get_include_ret[@]}
+        val="$RSYNC ${params[@]} '$PATHREP/$SOURCE/game/$GAME_LIB/$K/' '$dst/'"
+        echo $val 
+        $RSYNC ${params[@]} "$PATHREP/$SOURCE/game/$GAME_LIB/$K/" "$dst/"
+    done
+}
+
+function sync_game {
+    ext=(*.lua *.txt)
     get_include ${ext[@]}
     params=${get_include_ret[@]}
-    $RSYNC ${params[@]} "$PATHREP/$SOURCE/content/" "$CONTENT_DST/"
+    val="$RSYNC ${params[@]} '$PATHREP/$SOURCE/game/' '$GAME_DST'"
+    echo $val 
+    $RSYNC --exclude=$LIB/* ${params[@]} "$PATHREP/$SOURCE/game/" "$GAME_DST/"
+}
+
+function sync_content {
+    ext=(*.js *.css *.xml *.vmap *.png *.tif *.tga *.txt *.vmat *.vtex *.psd)
+    get_include ${ext[@]}
+    params=${get_include_ret[@]}
+    $RSYNC --exclude=$LIB/* ${params[@]} "$PATHREP/$SOURCE/content/" "$CONTENT_DST/"
 }
 
 function install_custom {
-	if [ ! -d "$CONTENT_DST" ]; then
-		mkdir "$CONTENT_DST"
-	fi
-	if [ ! -d "$GAME_DST" ]; then
-		mkdir "$GAME_DST"
-	fi
-    sync_custom_game
-    sync_custom_content
+    if [ ! -d "$CONTENT_DST" ]; then
+	    mkdir "$CONTENT_DST"
+    fi
+    if [ ! -d "$GAME_DST" ]; then
+	    mkdir "$GAME_DST"
+    fi
+    sync_game
+    sync_content
 }
 
 function build_map {
@@ -94,21 +138,6 @@ function run-tools {
 # done
 # echo "gamelibs is ${GAMELIBS[*]}"
 # 
-get_include_ret=()
-function get_include {
-    get_include_ret=()
-    if [ $# -eq 0 ]; then
-        return
-    fi
-    local arr=("$@")
-    # echo ${arr[*]}
-    for i in "${arr[@]}"; do
-        get_include_ret+=( --include="*.$i" )
-    done
-    get_include_ret+=( --include='*/' )
-    get_include_ret+=( --exclude='*' )
-    # echo ${func_ret[*]}
-}
 # 
 # ext=(lua txt)
 # get_include ${ext[@]}
