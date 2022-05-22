@@ -1,4 +1,4 @@
-local Logger = require("lib.dota-lua-debug.logging")
+local Logger = require("lib.dota-lua-debug.debug").logging
 local log = Logger()
 
 local setup = {}

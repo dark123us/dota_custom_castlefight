@@ -9,7 +9,6 @@ set +a
 # create_custom
 # install_lib
 install_custom
-sync_game_libs
 
 
 # echo $PATHREPLINUX/$SOURCE/content $CONTENT
@@ -17,11 +16,9 @@ sync_game_libs
 
 WATCH_GAME=game
 WATCH_CONTENT=content
-WATCH_LIBS=submodules
 
-WATCH_DIRS="-r $PATHREPLINUX/$SOURCE/$WATCH_CONTENT/"
-WATCH_DIRS=$WATCH_DIRS" -r $PATHREPLINUX/$SOURCE/$WATCH_GAME/"
-WATCH_DIRS=$WATCH_DIRS" -r $PATHREPLINUX/$SOURCE/$WATCH_LIBS/"
+WATCH_DIRS="-r $PATHREP/$SOURCE/$WATCH_CONTENT/"
+WATCH_DIRS=$WATCH_DIRS" -r $PATHREP/$SOURCE/$WATCH_GAME/"
 COMMANDS="-e modify"
 
 clear
@@ -31,7 +28,6 @@ while true; do
     inotifywait $WATCH_DIRS $COMMANDS |\
         (
             while read directory action file; do
-                # sleep 1
                 clear
                 echo $(date)
                 echo $WATCH_DIRS
@@ -40,21 +36,16 @@ while true; do
 #                 echo 'not find if file '$file
 #                 continue
 #             fi
-                if [[ $directory == *$WATCH_LIBS* ]]; then
-                    echo "in libs"
-                    sync_content_libs
-                    sync_game_libs
-                    # sleep 1
-                    # make support
-                elif [[ $directory == *$WATCH_CONTENT* ]]; then
+                if [[ $directory == *$WATCH_CONTENT* ]]; then
                     echo "in content"
-                    sync_custom_content
+                    sync_content
+                    sync_content_lib
                     # sleep 1
                     # make support
                 elif [[ $directory == *$WATCH_GAME* ]]; then
                     echo "in game"
-                    sync_custom_game
-                    sync_game_libs
+                    sync_game
+                    sync_game_lib
                     # sleep 1
                     # make support
                 fi
