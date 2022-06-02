@@ -16,6 +16,8 @@ log:debug("///////")
 log:debug({ECS})
 log:debug({setup})
 
+ECS.event:subscribe("Ability1", function(data) log:debug({data}) end)
+
 local Rx = require("lib.RxLua.rx")
 log:debug(tostring(Rx))
 
