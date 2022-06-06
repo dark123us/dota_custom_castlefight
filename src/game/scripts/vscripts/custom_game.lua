@@ -1,4 +1,6 @@
--- D:\SteamLibrary\steamapps\common\dota 2 beta\game\core\scripts\vscripts\utils
+local args = {...}
+local directory = args[1]..'.'
+
 local hook_require = require("lib.dota-lua-debug.debug.hook_require")
 hook_require:install()
 local Logger = require("lib.dota-lua-debug.debug").logging
@@ -6,60 +8,46 @@ local log = Logger()
 log:setLevel(log.DEBUG)
 log:debug("---------init------------")
 
-local args = {...}
-local directory = args[1]..'.'
-log:debug(directory)
-local setup = require(directory.."setup")
+local CustomGame = {}
 
 local ECS = require("lib.dota-ecs.ecs")
-log:debug("///////")
-log:debug({ECS})
-log:debug({setup})
+local setup = require(directory.."setup")
 
-ECS.event:subscribe("Ability1", function(data) log:debug({data}) end)
 
-local Rx = require("lib.RxLua.rx")
-log:debug(tostring(Rx))
-
-local msg = function(val)
-    log:debug(val)
+function CustomGame:Init()
+    setup:Init()
 end
 
-Rx.Observable.fromRange(1, 8)
-  :filter(function(x) return x % 2 == 0 end)
-  :concat(Rx.Observable.of('who do we appreciate'))
-  :map(function(value) return value .. '!' end)
-  :subscribe(msg)
 
-if CustomGame == nil then
-    CustomGame = {}
-else
-    CustomGame:close()
-end
+-- local Rx = require("lib.RxLua.rx")
+-- log:debug(tostring(Rx))
+-- 
+-- local msg = function(val)
+--     log:debug(val)
+-- end
+-- 
+-- Rx.Observable.fromRange(1, 8)
+--   :filter(function(x) return x % 2 == 0 end)
+--   :concat(Rx.Observable.of('who do we appreciate'))
+--   :map(function(value) return value .. '!' end)
+--   :subscribe(msg)
+
+-- if CustomGame == nil then
+--     CustomGame = {}
+-- else
+--     CustomGame:close()
+-- end
 
 function CustomGame:Activate()
     log:debug("ACTIVATE")
-    setup:init()
+    setup:Activate()
 	GameRules:GetGameModeEntity():SetThink( "OnThink", self )
-	-- local mode = GameRules:GetGameModeEntity()
-    -- print('mode is ', mode)
-    -- print(GameRules:GetGameModeEntity())
-    -- log:debug({GameRules=GameRules})
-	-- -- GameRules:GetGameModeEntity():SetThink( "OnThink", self, "GlobalThink", 2 )
-	-- GameRules:GetGameModeEntity():SetThink( "OnThink", self )
-	-- GameRules:EnableCustomGameSetupAutoLaunch(true)
-	-- GameRules:SetCustomGameSetupAutoLaunchDelay(0)
-	-- GameRules:SetCustomGameSetupTimeout(10)
-	-- GameRules:SetHeroSelectionTime( 10 )
-	-- GameRules:SetStrategyTime( 0.0 )
-	-- GameRules:SetShowcaseTime( 0.0 )
-	-- GameRules:SetPreGameTime( 0.0 )
-	-- GameRules:SetGoldTickTime(999999)
-	-- GameRules:SetGoldPerTick(0)          
-	-- GameRules:SetHeroSelectPenaltyTime(5)
-
-    -- mode:SetCustomGameForceHero("npc_dota_hero_windrunner")
-	-- -- mode:SetCustomGameForceHero("npc_dota_hero_custom_windrunner")
+    ECS.event.subscribe('Ability1', function(data) log:debug('a1') end)
+    ECS.event.subscribe('Ability2', function(data) log:debug('a2') end)
+    for k,v in pairs(ECS.event.events()) do
+        log:debug({k,v})
+    end
+    log:debug({ability=ECS.event.events().Ability1})
 end
 
 function CustomGame:OnThink()
@@ -73,7 +61,7 @@ function CustomGame:OnThink()
 end
 
 
-function CustomGame:close()
+function CustomGame:Close()
 end
 
 return CustomGame
