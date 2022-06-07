@@ -84,7 +84,7 @@ function sync_content_lib {
 }
 
 function sync_game {
-    ext=(*.lua *.txt)
+    ext=(*.lua *.txt *.png)
     get_include ${ext[@]}
     params=${get_include_ret[@]}
     val="$RSYNC ${params[@]} '$PATHREP/$SOURCE/game/' '$GAME_DST'"

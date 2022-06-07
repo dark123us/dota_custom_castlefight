@@ -4,6 +4,7 @@ local log = Logger()
 local ECS = require("lib.dota-ecs.ecs")
 
 local HERO = "npc_dota_hero_windrunner"
+
 function setAbility(entity, abilityName)
     if entity:IsRealHero() and entity:HasAbility(abilityName) then
         entity:FindAbilityByName(abilityName):SetLevel(1)
@@ -94,8 +95,8 @@ function Setup:Activate()
     ListenToGameEvent("game_rules_state_change", Dynamic_Wrap(self, "OnStateChange"), self)
     ListenToGameEvent('npc_spawned', function(event) HandleNpcSpawned(event.entindex) end, nil)
 
-    ECS.event.subscribe("Ability1", function(data) log:debug('a1') end)
-    ECS.event.subscribe("Ability2", function(data) log:debug('a2') end)
+    ECS.event:subscribe("Ability1", function(data) log:debug('a1') end)
+    ECS.event:subscribe("Ability2", function(data) log:debug('a2') end)
 end
 
 function Setup:OnStateChange()

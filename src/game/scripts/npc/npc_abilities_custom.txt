@@ -5,14 +5,16 @@
 
 	"Ability1"
 	{
-		"BaseClass"			"ability_lua"
-		"ScriptFile"		"abilities/main"
-		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+		"BaseClass"			    "ability_lua"
+		"ScriptFile"		    "abilities/main"
+		"AbilityBehavior"	    "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+        "AbilityTextureName"    "Barracks"
 	}
 	"Ability2"
 	{
-		"BaseClass"			"ability_lua"
-		"ScriptFile"		"abilities/main"
-		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+		"BaseClass"			    "ability_lua"
+		"ScriptFile"		    "abilities/main"
+		"AbilityBehavior"	    "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+        "AbilityTextureName"    "Barracks"
 	}
 }

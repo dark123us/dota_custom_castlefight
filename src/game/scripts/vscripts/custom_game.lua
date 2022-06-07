@@ -42,12 +42,12 @@ function CustomGame:Activate()
     log:debug("ACTIVATE")
     setup:Activate()
 	GameRules:GetGameModeEntity():SetThink( "OnThink", self )
-    ECS.event.subscribe('Ability1', function(data) log:debug('a1') end)
-    ECS.event.subscribe('Ability2', function(data) log:debug('a2') end)
+    ECS.event:subscribe('Ability1', function(data) log:debug('a1') end)
+    ECS.event:subscribe('Ability2', function(data) log:debug('a2') end)
     for k,v in pairs(ECS.event.events()) do
         log:debug({k,v})
     end
-    log:debug({ability=ECS.event.events().Ability1})
+    log:debug({ability=ECS.event:events().Ability1})
 end
 
 function CustomGame:OnThink()
