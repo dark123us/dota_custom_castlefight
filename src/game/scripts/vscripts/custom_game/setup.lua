@@ -90,7 +90,7 @@ function Setup:Activate()
     GameRules:SetGoldPerTick(0)          
     GameRules:SetHeroSelectPenaltyTime(5)
 
-    mode:SetCustomGameForceHero("npc_dota_hero_windrunner")
+    mode:SetCustomGameForceHero(HERO)
 
     ListenToGameEvent("game_rules_state_change", Dynamic_Wrap(self, "OnStateChange"), self)
     ListenToGameEvent('npc_spawned', function(event) HandleNpcSpawned(event.entindex) end, nil)
@@ -103,7 +103,7 @@ function Setup:OnStateChange()
     --random hero once we reach strategy phase
     log:debug(string.format("OnStateChange %s %d", GameRules:State_Get(), DOTA_GAMERULES_STATE_STRATEGY_TIME))
     if GameRules:State_Get() == DOTA_GAMERULES_STATE_STRATEGY_TIME then
-        randomForNoHeroSelected()
+        -- randomForNoHeroSelected()
     end
 end
 

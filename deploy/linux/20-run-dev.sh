@@ -6,6 +6,16 @@ set +a
 VER=v2
 NAME=vim_ide
 REGISTER=hub.cap.by:443
+IMAGE=$REGISTER/$NAME:$VER 
+CONTAINER=$NAME-$VER-ide
+
+IS_EXIST=$(docker ps | grep "$CONTAINER")
+if [[ ! -z $IS_EXIST ]]; then
+        echo "is exist $IS_EXIST"
+        docker exec -it $CONTAINER bash
+        exit 0
+fi
+
 
 SRC=$PATHREP
 DST="/home/dark123us"
@@ -47,5 +57,5 @@ echo ${VOLUMES[@]}
 
 CMD="cd $DST/app; sudo -iu dark123us; mc"
 
-docker run -it --rm --name $NAME-$VER "${VOLUMES[@]}" $REGISTER/$NAME:$VER bash -c "$CMD"
+docker run -it --rm --name $CONTAINER "${VOLUMES[@]}" $IMAGE bash -c "$CMD"
 
