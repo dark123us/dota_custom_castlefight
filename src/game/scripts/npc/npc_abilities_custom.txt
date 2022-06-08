@@ -11,6 +11,14 @@
         "AbilityTextureName"    "barracks"
     }
 
+    "BuildBarrack"
+    {
+        "BaseClass"			    "ability_lua"
+        "ScriptFile"		    "abilities/main"
+        "AbilityBehavior"	    "DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+        "AbilityTextureName"    "barracks"
+    }
+
     "Ability2"
     {
         "BaseClass"			    "ability_lua"
