@@ -8,19 +8,11 @@ local CONST = {
     HERO = "npc_dota_hero_windrunner"
 }
 
-function setAbility(entity, abilityName)
-    if entity:IsRealHero() and entity:HasAbility(abilityName) then
-        entity:FindAbilityByName(abilityName):SetLevel(1)
-    end
-end
-
 function HandleNpcSpawned(entityIndex)
     local entity = API.player:EntityIndexToHandler(entityIndex)
     API.player:SetAbilityLevel(entity, "Ability1")
     API.player:SetAbilityLevel(entity, "Ability2", 1)
 end
-
-
 
 local Setup = {}
 
