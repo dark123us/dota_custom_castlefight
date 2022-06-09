@@ -12,3 +12,8 @@ Ability2 = {}
 function Ability2:OnSpellStart()
     event:notify('Ability2', {from=self})
 end
+
+BuildBarrack = {}
+function BuildBarrack:OnSpellStart()
+    event:notify('BuildBarrack', {from=self})
+end

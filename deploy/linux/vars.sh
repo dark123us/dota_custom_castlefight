@@ -21,14 +21,17 @@ declare -A CONTENT_LIB_SYNC
 
 _RxLua=( rx.lua )
 _dota_ecs=( ecs.lua ecs/*.lua )
+_dota2_api=( api.lua api/*.lua)
 _dota_lua_debug1=( debug.lua debug/*.lua )
 _dota_lua_debug2=( debug.lua debug/*.lua 
     debug/lualogging/logging.lua debug/lualogging/logging/*.lua)
 
 GAME_LIB_INSTALL[RxLua]=${_RxLua[@]}
+GAME_LIB_INSTALL[dota2_api]=${_dota2_api[@]}
 GAME_LIB_INSTALL[dota-ecs]=${_dota_ecs[@]}
 GAME_LIB_INSTALL[dota-lua-debug]=${_dota_lua_debug2[@]}
 
+GAME_LIB_SYNC[dota2_api]=${_dota2_api[@]}
 GAME_LIB_SYNC[dota-ecs]=${_dota_ecs[@]}
 GAME_LIB_SYNC[dota-lua-debug]=${_dota_lua_debug1[@]}
 
