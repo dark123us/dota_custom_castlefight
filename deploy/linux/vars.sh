@@ -7,7 +7,7 @@ CONTENT_LIB=panorama/$LIB
 GAME_LIB=scripts/vscripts/$LIB
 # CONTENTLIBXML=$CONTENT/panorama/layout/custom_game/$LIB
 
-RSYNC="rsync -rmv "
+RSYNC="rsync -rumv "
 # RSYNC="rsync -rm "
 # LIBSRC=$PATHREPLINUX/$SOURCE/submodules
 # RSYNC_GAME="-av --include='file.lua' --exclude='*'"

@@ -152,7 +152,8 @@ function run-tools {
 	echo "SET MAP=$NAMEMAP" >> $NAMEBAT
 	echo "echo \"in console run 'dota_launch_custom_game %NAMECUSTOM% %MAP% jointeam good'\"" >> $NAMEBAT
 	# echo '"%PATHDOTA%\game\bin\win64\dota2.exe" -addon %NAMECUSTOM% -map %MAP% -tools -threads 4 -novid -vconsole' >> $NAMEBAT
-	echo '"%PATHDOTA%\game\bin\win64\dota2.exe" -addon %NAMECUSTOM% -uidev -dev -novid -tools -vconsole -toconsole -condebug -nominidumps +dota_launch_custom_game %NAMECUSTOM% %MAP% jointeam good' >> $NAMEBAT
+	# echo '"%PATHDOTA%\game\bin\win64\dota2.exe" -addon %NAMECUSTOM% -uidev -dev -novid -tools -vconsole -toconsole -condebug -nominidumps +dota_launch_custom_game %NAMECUSTOM% %MAP% jointeam good' >> $NAMEBAT
+	echo '"%PATHDOTA%\game\bin\win64\dota2.exe" -addon %NAMECUSTOM% -novid -tools -vconsole -toconsole +dota_launch_custom_game %NAMECUSTOM% %MAP% jointeam good' >> $NAMEBAT
 	echo "pause " >> $NAMEBAT
 
 	cmd.exe /c "$PATHREPWINDOWS/deploy/linux/$NAMEBAT"
