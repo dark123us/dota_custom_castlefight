@@ -1,24 +1,22 @@
 <root>
     <script>
-        $.Msg("!---loading---!")
-
+        $.Msg("!---loading--- INDEX.XML !")
     </script>
     <scripts>
-        <include src="file://{resources}/lib/vendors/moment/moment.min.js" />
-        <include src="file://{resources}/lib/vendors/js-logger/logger.min.js" />
+        <include src="file://{resources}/lib/vendors/moment/min/moment.min.js" />
+        <include src="file://{resources}/lib/vendors/js-logger/src/logger.min.js" />
         <include src="file://{resources}/lib/debug/src/console.js" />
         <include src="file://{resources}/lib/debug/src/logging.js" />
+        <include src="file://{resources}/lib/dota-js-api/script/api.js" />
+        <include src="file://{resources}/lib/dota-js-api/script/event.js" />
         <include src="file://{resources}/lib/util/script/document.js" />
         <include src="file://{resources}/lib/util/script/event.js" />
         <include src="file://{resources}/lib/util/script/ui.js" />
         <include src="file://{resources}/lib/util/script/tooltip.js" />
+
         <include src="file://{resources}/script/rnd.js" />
         <include src="file://{resources}/script/index.js" />
     </scripts>
     <Panel>
-        <!--
-        <CustomUIElement type="Hud" layoutfile="file://{resources}/vendors/debug-dota/layout/index.xml" />
-            <CustomUIElement type="Hud" layoutfile="file://{resources}/vendors/ecs-dota/layout/index.xml" />
-        -->
     </Panel>
 </root>

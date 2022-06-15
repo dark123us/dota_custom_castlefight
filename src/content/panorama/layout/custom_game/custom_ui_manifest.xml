@@ -1,6 +1,6 @@
 <root>
     <script>
-        // $.Msg("custom_ui_manifest.xml")
+        $.Msg("custom_ui_manifest.xml")
     </script>
     <scripts>
         <!--

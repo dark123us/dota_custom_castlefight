@@ -1,0 +1,10 @@
+<root>
+    <script>
+        $.Msg("!---loading--- API.XML!")
+    </script>
+    <scripts>
+    </scripts>
+    <Panel>
+    </Panel>
+</root>
+

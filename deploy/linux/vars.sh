@@ -35,5 +35,20 @@ GAME_LIB_SYNC[dota2_api]=${_dota2_api[@]}
 GAME_LIB_SYNC[dota-ecs]=${_dota_ecs[@]}
 GAME_LIB_SYNC[dota-lua-debug]=${_dota_lua_debug1[@]}
 
+
+_js_api=(script/*.js)
+_debug=(src/*.js)
+_util=(script/*.js)
+#_vendors=(vendors/js-logger/src/logger.min.js vendors/moment/min/moment.min.js)
+_vendors=(logger.min.js moment.min.js)
+
+CONTENT_LIB_INSTALL[dota-js-api]=${_js_api[@]}
+CONTENT_LIB_INSTALL[debug]=${_debug[@]}
+CONTENT_LIB_INSTALL[util]=${_util[@]}
+CONTENT_LIB_INSTALL[vendors]=${_vendors[@]}
+
+CONTENT_LIB_SYNC[dota-js-api]=${_js_api[@]}
+CONTENT_LIB_SYNC[debug]=${_debug[@]}
+CONTENT_LIB_SYNC[util]=${_util[@]}
 # printf "%s\n" "${!GAME_LIB_INSTALL[RxLua]}"
 # printf "%s\n" "${!GAME_LIB_INSTALL[dota-ecs]}"

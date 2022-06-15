@@ -35,9 +35,9 @@ function install_game_lib {
         fi
         get_include ${GAME_LIB_INSTALL[$K]}
         params=${get_include_ret[@]}
-        val="$RSYNC ${params[@]} '$PATHREP/$SOURCE/game/$GAME_LIB/$K/' '$dst/'"
+        val="$RSYNC ${params[@]} '$PATHREP/$SOURCE/game/$GAME_LIB/$K/' '$dst'"
         echo $val 
-        $RSYNC ${params[@]} "$PATHREP/$SOURCE/game/$GAME_LIB/$K/" "$dst/"
+        $RSYNC ${params[@]} "$PATHREP/$SOURCE/game/$GAME_LIB/$K/" "$dst"
     done
 }
 
@@ -48,7 +48,7 @@ function sync_game_lib {
         params=${get_include_ret[@]}
         val="$RSYNC ${params[@]} '$PATHREP/$SOURCE/game/$GAME_LIB/$K/' '$dst/'"
         echo $val 
-        $RSYNC ${params[@]} "$PATHREP/$SOURCE/game/$GAME_LIB/$K/" "$dst/"
+        $RSYNC ${params[@]} "$PATHREP/$SOURCE/game/$GAME_LIB/$K/" "$dst"
     done
 }
 
@@ -65,9 +65,9 @@ function install_content_lib {
         fi
         get_include ${CONTENT_LIB_INSTALL[$K]}
         params=${get_include_ret[@]}
-        val="$RSYNC ${params[@]} '$src/' '$dst/'"
+        val="$RSYNC ${params[@]} '$src/' '$dst'"
         echo $val 
-        $RSYNC ${params[@]} "$src" "$dst/"
+        $RSYNC ${params[@]} "$src/" "$dst"
     done
 }
 
@@ -77,9 +77,9 @@ function sync_content_lib {
         src=$PATHREP/$SOURCE/content/$CONTENT_LIB/$K
         get_include ${CONTENT_LIB_SYNC[$K]}
         params=${get_include_ret[@]}
-        val="$RSYNC ${params[@]} '$src/' '$dst/'"
+        val="$RSYNC ${params[@]} '$src/' '$dst'"
         echo $val 
-        $RSYNC ${params[@]} "$src/" "$dst/"
+        $RSYNC ${params[@]} "$src/" "$dst"
     done
 }
 

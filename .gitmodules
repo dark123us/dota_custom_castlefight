@@ -19,3 +19,9 @@
 [submodule "src/game/scripts/vscripts/lib/dota2_api"]
 	path = src/game/scripts/vscripts/lib/dota2_api
 	url = ssh://git@github.com/dark123us/dota2_api
+[submodule "src/content/panorama/lib/vendors/js-logger"]
+	path = src/content/panorama/lib/vendors/js-logger
+	url = https://github.com/jonnyreeves/js-logger
+[submodule "src/content/panorama/lib/vendors/moment"]
+	path = src/content/panorama/lib/vendors/moment
+	url = https://github.com/moment/moment/

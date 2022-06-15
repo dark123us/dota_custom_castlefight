@@ -21,7 +21,7 @@ WATCH_DIRS="-r $PATHREP/$SOURCE/$WATCH_CONTENT/"
 WATCH_DIRS=$WATCH_DIRS" -r $PATHREP/$SOURCE/$WATCH_GAME/"
 COMMANDS="-e modify"
 
-clear
+# clear
 echo $(date)
 echo $WATCH_DIRS
 while true; do

@@ -1,4 +1,3 @@
-$.Msg("===================== HELLO =======================")
 (function (global) {
     const log = global.logging.getLogger();
 
@@ -6,8 +5,10 @@ $.Msg("===================== HELLO =======================")
     log.debug("    INIT INDEX");
     log.debug("==================");    // 
 
+
     const event = global.event.Event().init()
-    const resdev = rnd.RD()
+    log.debug(global)
+    const resdev = global.rnd.RD()
     resdev.init()
 
     const eventid = event.subscribe('hello', (params) => {

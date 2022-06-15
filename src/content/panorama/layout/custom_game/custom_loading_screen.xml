@@ -1,6 +1,6 @@
 <root>
     <script>
-        // $.Msg("custom_loading_screen.xml")
+        $.Msg("custom_loading_screen.xml 123")
     </script>
     <Panel id="panel_id" class="MainPanelClass">
     </Panel>

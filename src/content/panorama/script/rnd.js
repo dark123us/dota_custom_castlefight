@@ -127,4 +127,5 @@
         };
         global[NAME] = UNIT[NAME];
     }
+    $.Msg('global.rnd is ', global.rnd!== undefined)
 })(this);

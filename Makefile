@@ -24,12 +24,7 @@ submodules_update:	## подкгрузить сабмодули
 	@git submodule update
 
 submodules_dev:		## сабмодули подгрузить клоникрование
-	@cd src/game/scripts/vscripts/lib; \
-		git clone ssh://git@github.com/dark123us/dota-ecs; \
-		git clone ssh://git@github.com/dark123us/dota-lua-debug; \
-		git clone ssh://git@github.com/dark123us/dota2_api; \
-		git submodule init; \
-		git submodule update
+	cd deploy/linux; bash submodules-dev.sh
 
 ide:			## IDE для разраотки
 	@cd $(DEVPATH); bash 20-run-dev.sh
