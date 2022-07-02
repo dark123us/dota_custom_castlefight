@@ -4,7 +4,9 @@
     </script>
     <styles>
         <include src="file://{resources}/style/tooltip.css"/>
+        <!--
         <include src="file://{resources}/vendors/ecs-dota/style/tooltip.css"/>
+        -->
     </styles>
     <Panel class="tooltip__main" hittest="false">
         <Panel class="tooltip__column">

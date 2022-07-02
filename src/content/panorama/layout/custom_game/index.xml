@@ -18,5 +18,6 @@
         <include src="file://{resources}/script/index.js" />
     </scripts>
     <Panel>
+        <CustomUIElement type="Hud" layoutfile="file://{resources}/layout/custom_game/tooltip.xml" />
     </Panel>
 </root>
